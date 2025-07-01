@@ -1,0 +1,30 @@
+<!-- templates/send_medical_record.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Người Gửi Bệnh Án</title>
+</head>
+<body>
+    <h2>📤 Gửi Bệnh Án</h2>
+    <form method="post">
+        <label for="medical_record">Nội dung bệnh án:</label><br>
+        <textarea name="medical_record" id="medical_record" rows="10" cols="60" placeholder="Nhập nội dung bệnh án..."></textarea><br><br>
+
+        <label for="password">Mật khẩu xác thực:</label><br>
+        <input type="password" name="password" id="password" placeholder="Nhập mật khẩu..." required><br><br>
+
+        <button type="submit">Gửi bệnh án</button>
+    </form>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li><strong>{{ category.upper() }}:</strong> {{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
