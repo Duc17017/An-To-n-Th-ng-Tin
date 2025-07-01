@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Xem bệnh án</title>
+</head>
+<body>
+    <h2>🔐 Nhập mật khẩu để xem bệnh án</h2>
+    <form method="post">
+        <input type="password" name="password" placeholder="Mật khẩu..." required>
+        <button type="submit">Xác nhận</button>
+    </form>
+
+    {% if message %}
+        <p><strong>{{ message }}</strong></p>
+    {% endif %}
+
+    {% if record %}
+        <hr>
+        <h3>📄 Nội dung bệnh án:</h3>
+        <pre>{{ record }}</pre>
+    {% endif %}
+</body>
+</html>
